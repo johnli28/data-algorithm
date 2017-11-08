@@ -21,7 +21,7 @@ int Partition(int* list, int low, int high)
 		list[low] = temp;
 
 		// Start from the low side, find the first element larger than pivot
-		while (low < high && list[low] < pivot)
+		while (low < high && list[low] <= pivot)
 		{
 			low++;
 		}
@@ -56,19 +56,23 @@ int main()
 {
 	int arr[10] = { 21, 17, 328, 538, 87, 129, 50, 211, 6, 68};
 	
-	std::cout << "This is before quick sorting" << std::endl;
+	std::cout << "This is before quick sort" << std::endl;
 	for (int i = 0; i < 10; i++)
 	{
 		std::cout << arr[i] << ", ";
 	}
 
+	std::cout << std::endl;
+
 	QuickSort(arr, 0, 9);
 	
-	std::cout << "This is after quick sorting" << std::endl;
+	std::cout << "This is after quick sort" << std::endl;
 	for (int i = 0; i < 10; i++)
 	{
 		std::cout << arr[i] << ", ";
 	}
+
+	std::cout << std::endl;
 
 	getchar();
 
