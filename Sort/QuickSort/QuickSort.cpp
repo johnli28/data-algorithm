@@ -3,6 +3,14 @@
 
 #include <iostream>
 
+/*
+	Divide and Conquer algorithm
+	Do partition, then recursion
+	Start from high, find the first less
+	Start from low, find the first larger
+	Partition return low as pivot position
+*/
+
 int Partition(int* list, int low, int high)
 {
 	int pivot = list[low]; //The first element as pivot
@@ -15,7 +23,7 @@ int Partition(int* list, int low, int high)
 			high--;
 		}
 
-		//Swap high and pivot
+		//Swap high and low
 		int temp = list[high];
 		list[high] = list[low];
 		list[low] = temp;
@@ -37,7 +45,6 @@ int Partition(int* list, int low, int high)
 
 }
 
-//Divide and Conquer
 void QuickSort(int* list, int low, int high)
 {
 	if (low < high)

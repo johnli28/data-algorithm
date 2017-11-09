@@ -3,6 +3,12 @@
 
 using std::vector;
 
+/*
+	Two layers of loop
+	The internal loop start from the tail
+	A flag indicates whether swap happens
+*/
+
 void BubbleSort(vector<int>& vec)
 {
 	int i, j;
