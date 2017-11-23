@@ -3,6 +3,7 @@
 
 typedef struct ListNode
 {
+	// Inside ListNode, cannot define member as ListNodePtr type, must use ListNode*
 	int data;
 	ListNode* next;
 } ListNode, *ListNodePtr;
