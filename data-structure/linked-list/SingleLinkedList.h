@@ -1,12 +1,14 @@
-#include <string>
-#include <iostream>
+#include <memory>
+
 
 typedef struct ListNode
 {
 	// Inside ListNode, cannot define member as ListNodePtr type, must use ListNode*
 	int data;
-	ListNode* next;
-} ListNode, *ListNodePtr;
+	std::shared_ptr<ListNode> next;
+} ListNode;
+
+typedef std::shared_ptr<ListNode> ListNodePtr;
 
 class LinkedList
 {

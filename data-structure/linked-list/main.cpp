@@ -1,19 +1,23 @@
 #include "SingleLinkedList.h"
 
+#include <iostream>
+
 int main()
 {
 	LinkedList l;
 	l.Append(1);
 	l.Append(2);
 	l.Append(3);
+	l.Append(4);
+	l.Append(5);
 
-	//l.Print();
+	l.Print();
 
 	l.ReversePrint();
 
-	//l.Revert();
+	l.Revert();
 
-	//l.Print();
+	l.Print();
 
 	ListNodePtr kNode = l.FindKFromTail(4);
 

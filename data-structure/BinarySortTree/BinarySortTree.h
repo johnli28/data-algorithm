@@ -1,15 +1,19 @@
 #pragma once
 
+#include <memory>
+
 typedef struct BSTNode
 {
 	// One data, two child pointers
 	int data;
 
 	// Inside BSTNode, cannot define member as ListNodePtr type, must use BSTNode* 
-	BSTNode* lChild;
-	BSTNode* rChild;
+	std::shared_ptr<BSTNode> lChild;
+	std::shared_ptr<BSTNode> rChild;
 
-} BSTNode, *BSTNodePtr;
+} BSTNode;
+
+typedef std::shared_ptr<BSTNode> BSTNodePtr;
 
 class BST
 {

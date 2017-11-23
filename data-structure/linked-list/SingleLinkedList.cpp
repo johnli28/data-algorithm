@@ -1,12 +1,12 @@
 #include "SingleLinkedList.h"
-
+#include <iostream>
 
 bool LinkedList::Append(int value)
 {
 	if (head == nullptr)
 	{
 		// if it is a empty list, head points to the first node
-		head = new ListNode();
+		head = std::make_shared<ListNode>();
 		head->data = value;
 		head->next = nullptr;
 	}
@@ -20,7 +20,7 @@ bool LinkedList::Append(int value)
 			nodeIndex = nodeIndex->next;
 		}
 
-		ListNodePtr nNode = new ListNode();
+		ListNodePtr nNode = std::make_shared<ListNode>();
 		nNode->data = value;
 		nNode->next = nullptr;
 

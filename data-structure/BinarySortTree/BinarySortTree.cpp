@@ -24,13 +24,15 @@ bool BST::SearchRecur(BSTNodePtr tree, BSTNodePtr parent, int key, BSTNodePtr& p
 	}
 	else if (tree->data > key)
 	{
-		//Continue search on left child tree
-		SearchRecur(tree->lChild, tree, key, pos);
+		// Continue search on left child tree
+		// Mistake: without return here, the result will be random
+		return SearchRecur(tree->lChild, tree, key, pos);
 	}
 	else
 	{
-		//Continue search on right child tree
-		SearchRecur(tree->rChild, tree, key, pos);
+		// Continue search on right child tree
+		// Mistake: without return here, the result will be random
+		return SearchRecur(tree->rChild, tree, key, pos);
 	}
 }
 
@@ -46,7 +48,7 @@ bool BST::Insert(int key)
 	{
 		if (root == nullptr)
 		{
-			root = new BSTNode;
+			root = std::make_shared <BSTNode>();
 			root->data = key;
 			root->lChild = nullptr;
 			root->rChild = nullptr;
@@ -54,7 +56,7 @@ bool BST::Insert(int key)
 		else if (key < lastPos->data)
 		{
 			//Insert as the left child
-			lastPos->lChild = new BSTNode;
+			lastPos->lChild = std::make_shared <BSTNode>();
 			lastPos->lChild->data = key;
 			lastPos->lChild->lChild = nullptr;
 			lastPos->lChild->rChild = nullptr;
@@ -62,7 +64,7 @@ bool BST::Insert(int key)
 		else
 		{
 			//Insert as right child
-			lastPos->rChild = new BSTNode;
+			lastPos->rChild = std::make_shared <BSTNode>();
 			lastPos->rChild->data = key;
 			lastPos->rChild->lChild = nullptr;
 			lastPos->rChild->rChild = nullptr;
