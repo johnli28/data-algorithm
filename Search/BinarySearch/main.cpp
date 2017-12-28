@@ -4,18 +4,22 @@
 
 using std::vector;
 
-const int VECTOR_SIZE = 10;
+const int VECTOR_SIZE = 3;
 
 int main()
 {
 	vector <int> vec;
-	
-	for (int i = 0; i < VECTOR_SIZE; i++)
-	{
-		vec.push_back(i);
-	}
 
-	int pos = BinarySearch(vec, 200);
+	vec.push_back(0);
+	vec.push_back(0);
+	vec.push_back(1);
+	vec.push_back(2);
+	vec.push_back(2);
+	vec.push_back(2);
+	vec.push_back(2);
+	
+
+	int pos = GetNumberOfK(vec, 3);
 
 	std::cout << "pos: " << pos << std::endl;
 
