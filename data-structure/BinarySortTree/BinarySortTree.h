@@ -24,6 +24,8 @@ public:
 	bool Insert(int key);
 	void PostfixPrint();
 	void PostfixPrintRecur(const BSTNodePtr& tree);
+	int Depth();
+	int DepthRecur(BSTNodePtr tree);
 
 	BSTNodePtr root;
 };

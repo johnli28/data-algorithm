@@ -3,40 +3,39 @@
 
 using namespace std;
 
+// Note: non-recursive function as wrapper, call another recursive function
 bool BST::Search(int key, BSTNodePtr& pos)
 {
 	return SearchRecur(root, nullptr, key, pos);
 }
 
-// parent is a critical parameter, in case of key not found, tree is already a null pointer, pos would point to tree's parent (the last traversion node)
+// Fault: forget parameter parent 
+// parent is critical, if key is not found, tree is already a null pointer, pos would point to tree's parent (the last traversion node)
 bool BST::SearchRecur(BSTNodePtr tree, BSTNodePtr parent, int key, BSTNodePtr& pos)
 {
-	if (tree == nullptr)
+	if (tree == nullptr) // Not found, return parent as the position of last traversion node
 	{
-		// Not found, return tree's parent, it is the position of last traversion node
 		pos = parent;
 		return false;
 	}
-	else if (tree->data == key)
+	else if (tree->data == key) //Found it, return tree
 	{
 		pos = tree;
 		return true;
 	}
-	else if (tree->data > key)
+	else if (tree->data > key) // Continue search on left child tree
 	{
-		// Continue search on left child tree
-		// Mistake: without return here, the result will be random
+		// Fault: miss return, the result could be random
 		return SearchRecur(tree->lChild, tree, key, pos);
 	}
-	else
+	else // Continue search on right child tree
 	{
-		// Continue search on right child tree
-		// Mistake: without return here, the result will be random
+		// Fault: miss return, the result could be random
 		return SearchRecur(tree->rChild, tree, key, pos);
 	}
 }
 
-//Insert based on SearchRecur
+// Note: Search first, then Insert
 bool BST::Insert(int key)
 {
 	BSTNodePtr lastPos;
@@ -74,6 +73,7 @@ bool BST::Insert(int key)
 	}
 }
 
+// Note: non-recursive function as wrapper, call another recursive function
 void BST::PostfixPrint()
 {
 	if (root == nullptr)
@@ -103,5 +103,25 @@ void BST::PostfixPrintRecur(const BSTNodePtr& tree)
 	if (tree->rChild != nullptr)
 	{
 		PostfixPrintRecur(tree->rChild);
+	}
+}
+
+int BST::Depth()
+{
+	return DepthRecur(root);
+}
+
+int BST::DepthRecur(BSTNodePtr tree)
+{
+	if (tree == nullptr)
+	{
+		return 0;
+	}
+	else
+	{
+		int leftDepth = DepthRecur(tree->lChild);
+		int rightDepth = DepthRecur(tree->rChild);
+
+		return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1;
 	}
 }
