@@ -128,3 +128,31 @@ int GetNumberOfK(const vector<int>& v, int k)
 	}
 }
 
+int GetMinOfRotatedSortedArray(const vector<int>& v)
+{
+	if (v.empty())
+	{
+		return -1;
+	}
+
+	int low = 0;
+	int	high = v.size() - 1;
+
+	while (high - low > 1)
+	{
+		int mid = (low + high) / 2;
+
+		if (v[mid] >= v[low])
+		{
+			low = mid;
+		}
+		else if (v[mid] <= v[high])
+		{
+			high = mid;
+		}
+	}
+
+	return v[low] > v[high] ? v[high] : v[low];
+	
+}
+
