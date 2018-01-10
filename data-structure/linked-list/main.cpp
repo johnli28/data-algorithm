@@ -1,10 +1,11 @@
-#include "SingleLinkedList.h"
-
+#include "ClassSingleLinkedList.h"
+#include "LinkedList.h"
 #include <iostream>
 
 int main()
 {
-	LinkedList l;
+	/*
+	SingleLinkedList l;
 	l.Append(1);
 	l.Append(2);
 	l.Append(3);
@@ -29,6 +30,43 @@ int main()
 	{
 		std::cout << "K from tail is: " << kNode->data << std::endl;
 	}
+	*/
+
+	LinkedList temp;
+
+	LinkedList l1 = nullptr;
+	Append(l1, 1);
+
+	LinkedList l2 = nullptr;
+	Append(l2, 1);
+	Append(l2, 2);
+	Append(l2, 3);
+	Append(l2, 4);
+
+	ListNode* lastK = FindLastKNode(l1, -1);
+	lastK = FindLastKNode(l1, 0);
+	lastK = FindLastKNode(l1, 5);
+
+	lastK = FindLastKNode(l2, -1);
+	lastK = FindLastKNode(l2, 0);
+	lastK = FindLastKNode(l2, 1);
+	lastK = FindLastKNode(l2, 4);
+	lastK = FindLastKNode(l2, 5);
+
+	RevertPrint(l2);
+
+	RevertList(l2);
+
+	PrintList(l2);
+
+	LinkedList l3 = nullptr;
+	Append(l3, 5);
+	Append(l3, 6);
+
+	ConcatTwoLists(l2, l3);
+	ConcatTwoLists(l1, l3);
+
+	ListNode* common = FindFirstCommonNode(l2, l1);
 
 	getchar();
 
