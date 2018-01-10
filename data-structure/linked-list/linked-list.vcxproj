@@ -143,10 +143,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SingleLinkedList.cpp" />
+    <ClCompile Include="ClassSingleLinkedList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SingleLinkedList.h" />
+    <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="ClassSingleLinkedList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

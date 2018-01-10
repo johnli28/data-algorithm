@@ -1,23 +1,23 @@
 #include <memory>
 
 
-typedef struct ListNode
+typedef struct SingleLinkedListNode
 {
 	// Inside ListNode, cannot define member as ListNodePtr type, must use ListNode*
 	int data;
-	std::shared_ptr<ListNode> next;
-} ListNode;
+	std::shared_ptr<SingleLinkedListNode> next;
+};
 
-typedef std::shared_ptr<ListNode> ListNodePtr;
+typedef std::shared_ptr<SingleLinkedListNode> ListNodePtr;
 
-class LinkedList
+class SingleLinkedList
 {
 public:
-	LinkedList()
+	SingleLinkedList()
 	{
 		head = nullptr;
 	}
-	~LinkedList() {}
+	~SingleLinkedList() {}
 
 	bool Append(int value);
 	void Print();

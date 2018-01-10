@@ -1,12 +1,12 @@
-#include "SingleLinkedList.h"
+#include "ClassSingleLinkedList.h"
 #include <iostream>
 
-bool LinkedList::Append(int value)
+bool SingleLinkedList::Append(int value)
 {
 	if (head == nullptr)
 	{
 		// if it is a empty list, head points to the first node
-		head = std::make_shared<ListNode>();
+		head = std::make_shared<SingleLinkedListNode>();
 		head->data = value;
 		head->next = nullptr;
 	}
@@ -20,7 +20,7 @@ bool LinkedList::Append(int value)
 			nodeIndex = nodeIndex->next;
 		}
 
-		ListNodePtr nNode = std::make_shared<ListNode>();
+		ListNodePtr nNode = std::make_shared<SingleLinkedListNode>();
 		nNode->data = value;
 		nNode->next = nullptr;
 
@@ -31,7 +31,7 @@ bool LinkedList::Append(int value)
 
 }
 
-void LinkedList::Print()
+void SingleLinkedList::Print()
 {
 	ListNodePtr p = head;
 	while (p != nullptr)
@@ -46,14 +46,14 @@ void LinkedList::Print()
 
 // This function is wrapper, calling another recursive function
 // Anyway to implement this function via loop?
-void LinkedList::ReversePrint()
+void SingleLinkedList::ReversePrint()
 {
 	ReversePrintRecur(head);
 	std::cout << std::endl;
 }
 
 // Recursion
-void LinkedList::ReversePrintRecur(ListNodePtr nPtr)
+void SingleLinkedList::ReversePrintRecur(ListNodePtr nPtr)
 {
 	if (nPtr != nullptr)
 	{
@@ -67,7 +67,7 @@ void LinkedList::ReversePrintRecur(ListNodePtr nPtr)
 
 }
 
-ListNodePtr LinkedList::FindKFromTail(int k)
+ListNodePtr SingleLinkedList::FindKFromTail(int k)
 {
 	// Boundary check of input arguments
 	if (k <= 0)
@@ -104,7 +104,7 @@ ListNodePtr LinkedList::FindKFromTail(int k)
 
 // Three pointers needed
 // p2 assigned to p1 firstly, then p3 assigned to p2
-void LinkedList::Revert()
+void SingleLinkedList::Revert()
 {
 	if (head == nullptr || head->next == nullptr)
 	{
