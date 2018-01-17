@@ -68,6 +68,17 @@ int main()
 
 	ListNode* common = FindFirstCommonNode(l2, l1);
 
+
+	LinkedList listToRemoveK = nullptr;
+	Append(listToRemoveK, 1);
+	Append(listToRemoveK, 2);
+	Append(listToRemoveK, 1);
+	Append(listToRemoveK, 1);
+	Append(listToRemoveK, 2);
+
+	RemoveNodesWithK(listToRemoveK, 1);
+
+
 	getchar();
 
 }

@@ -226,3 +226,40 @@ ListNode* FindFirstCommonNode(LinkedList l1, LinkedList l2)
 
 	}
 }
+
+void RemoveNodesWithK(LinkedList & head, int k)
+{
+	if (head == nullptr)
+	{
+		return;
+	}
+
+	// Note: find new head, the first node with its data not k.
+	while (head != nullptr && head->data == k)
+	{
+		head = head->next;
+	}
+
+	ListNode* pre = head;
+	ListNode* cur = head;
+
+	// Note: null check for both cur and cur->next
+	while (cur != nullptr && cur->next != nullptr)
+	{
+		cur = pre->next;
+
+		if (cur->data == k)
+		{
+			pre->next = cur->next;
+		}
+		else
+		{
+			pre = cur;
+		}
+	}
+}
+
+ListNode* RemoveDuplicatedNodes(LinkedList & head)
+{
+	return nullptr;
+}
