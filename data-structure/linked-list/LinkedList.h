@@ -128,6 +128,8 @@ void RevertList(LinkedList& head)
 	// Fault: typo to == and cause deadlock between two nodes
 	head->next = nullptr;
 
+	// Note: init pre as head and cur as head next
+	// while cur is not null, enter while and assign its next to next
 	while (cur != nullptr)
 	{
 		ListNode* next = cur->next;
