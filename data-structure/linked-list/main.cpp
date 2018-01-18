@@ -2,9 +2,8 @@
 #include "LinkedList.h"
 #include <iostream>
 
-int main()
+void TestClassSingleLinkedList()
 {
-	/*
 	SingleLinkedList l;
 	l.Append(1);
 	l.Append(2);
@@ -30,14 +29,20 @@ int main()
 	{
 		std::cout << "K from tail is: " << kNode->data << std::endl;
 	}
-	*/
+}
 
+void TestLinkedList()
+{
 	LinkedList temp;
 
-	LinkedList l1 = nullptr;
+	LinkedList l1;
+	InitEmptyList(l1);
+
 	Append(l1, 1);
 
-	LinkedList l2 = nullptr;
+	LinkedList l2;
+	InitEmptyList(l2);
+
 	Append(l2, 1);
 	Append(l2, 2);
 	Append(l2, 3);
@@ -59,7 +64,9 @@ int main()
 
 	PrintList(l2);
 
-	LinkedList l3 = nullptr;
+	LinkedList l3;
+	InitEmptyList(l3);
+
 	Append(l3, 5);
 	Append(l3, 6);
 
@@ -69,7 +76,10 @@ int main()
 	ListNode* common = FindFirstCommonNode(l2, l1);
 
 
-	LinkedList listToRemoveK = nullptr;
+	LinkedList listToRemoveK;
+
+	InitEmptyList(listToRemoveK);
+
 	Append(listToRemoveK, 1);
 	Append(listToRemoveK, 2);
 	Append(listToRemoveK, 1);
@@ -78,6 +88,31 @@ int main()
 
 	RemoveNodesWithK(listToRemoveK, 1);
 
+	LinkedList listHasCycle;
+	InitEmptyList(listHasCycle);
+
+	ListNode * cycleNode = new ListNode;
+	cycleNode->data = 4;
+	cycleNode->next = nullptr;
+
+	Append(listHasCycle, 1);
+	Append(listHasCycle, 2);
+	Append(listHasCycle, 3);
+	AppendNode(listHasCycle, cycleNode);
+
+	Append(listHasCycle, 5);
+	Append(listHasCycle, 6);
+	Append(listHasCycle, 7);
+	AppendNode(listHasCycle, cycleNode);
+
+	bool isCycle = HasCycle(listHasCycle);
+	isCycle = HasCycle(l2);
+
+}
+
+int main()
+{
+	TestLinkedList();
 
 	getchar();
 
