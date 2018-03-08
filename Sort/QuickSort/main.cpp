@@ -5,20 +5,20 @@ using namespace std;
 
 int main()
 {
-	vector<int> vec = { 5, 8, 7, 3, 2 };
+	vector<int> vec = { 12, 9, 5, 8, 7, 9, 3, 2, 7 };
 
 	std::cout << "This is before quick sort" << std::endl;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < vec.size(); i++)
 	{
 		std::cout << vec[i] << ", ";
 	}
 
 	std::cout << std::endl;
 
-	QuickSort(vec, 0, 4);
+	QuickSort(vec, 0, vec.size() - 1);
 
 	std::cout << "This is after quick sort" << std::endl;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < vec.size(); i++)
 	{
 		std::cout << vec[i] << ", ";
 	}
