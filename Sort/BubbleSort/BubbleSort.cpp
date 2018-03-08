@@ -1,11 +1,13 @@
 #include <iostream>
 #include <vector>
 
+#include <algorithm>
+
 using std::vector;
 
 /*
-	Two layers of loop
-	The internal loop start from the tail
+	Two tiers of loop
+	Internal loop start from the end
 	A flag indicates whether swap happens
 */
 
@@ -22,9 +24,7 @@ void BubbleSort(vector<int>& vec)
 		{
 			if (vec[j - 1] > vec[j])
 			{
-				int temp = vec[j - 1];
-				vec[j - 1] = vec[j];
-				vec[j] = temp;
+				std::swap(vec[j - 1], vec[j]);
 				flag = true;
 			}
 		}
