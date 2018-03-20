@@ -110,7 +110,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="lcs.h" />
+    <ClInclude Include="Fibonacci.h" />
+    <ClInclude Include="LongestCommonSubsequence.h" />
+    <ClInclude Include="LongestIncreaseSubsequence.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
