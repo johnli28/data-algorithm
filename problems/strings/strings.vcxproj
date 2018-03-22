@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{453C2277-83B3-4AC7-8EC8-BC338D2BC4FA}</ProjectGuid>
-    <RootNamespace>numbers</RootNamespace>
+    <ProjectGuid>{A735F610-8CC2-4E6E-AD1E-07AAFFEB4C1E}</ProjectGuid>
+    <RootNamespace>strings</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,15 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Fibonacci.h" />
-    <ClInclude Include="MinSizeSubarraySum.h" />
-    <ClInclude Include="NumberOfWaysToStep.h" />
-    <ClInclude Include="palindrome.h" />
-    <ClInclude Include="ReverseArray.h" />
-    <ClInclude Include="TwoSum.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="MaxRepeatingChar.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
