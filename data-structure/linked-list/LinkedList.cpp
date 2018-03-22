@@ -139,16 +139,19 @@ void RevertList(LinkedList& head)
 		return;
 	}
 
+	// Note: init pre = head and cur = head->next
 	ListNode* pre = head;
 	ListNode* cur = head->next;
 
+	// Note: init head->next as nullptr
 	// Fault: typo to == and cause deadlock between two nodes
 	head->next = nullptr;
 
-	// Note: init pre = head and cur = head->next
-	// while cur is not null, enter while and assign its next to next
+	
+	// Note: while loop when cur is not null
 	while (cur != nullptr)
 	{
+		// Note: assign next, and move cur to pre, and next to cur
 		ListNode* next = cur->next;
 		cur->next = pre;
 
@@ -259,6 +262,11 @@ void RemoveNodesWithK(LinkedList & head, int k)
 		head = head->next;
 	}
 
+	if (head == nullptr)
+	{
+		return;
+	}
+
 	ListNode* pre = head;
 	ListNode* cur = pre->next;
 
@@ -277,6 +285,37 @@ void RemoveNodesWithK(LinkedList & head, int k)
 		cur = pre->next;
 	}
 }
+
+void RemoveNodesLargerThanK(LinkedList & head, int k)
+{
+	while (head != nullptr && head->data >= k)
+	{
+		head = head->next;
+	}
+
+	if (head == nullptr)
+	{
+		return;
+	}
+
+	ListNode* pre = head;
+	ListNode* cur = head->next;
+
+	while (cur != nullptr)
+	{
+		if (cur->data >= k)
+		{
+			pre->next = cur->next;
+			cur = cur->next;
+		}
+		else
+		{
+			pre = cur;
+			cur = cur->next;
+		}
+	}
+}
+
 
 ListNode* RemoveDuplicatedNodes(LinkedList & head)
 {

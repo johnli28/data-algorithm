@@ -80,13 +80,16 @@ void TestLinkedList()
 
 	InitEmptyList(listToRemoveK);
 
+	Append(listToRemoveK, 5);
+	Append(listToRemoveK, 4);
 	Append(listToRemoveK, 1);
+	Append(listToRemoveK, 6);
 	Append(listToRemoveK, 2);
-	Append(listToRemoveK, 1);
-	Append(listToRemoveK, 1);
-	Append(listToRemoveK, 2);
+	Append(listToRemoveK, 7);
 
-	RemoveNodesWithK(listToRemoveK, 1);
+	//RemoveNodesWithK(listToRemoveK, 1);
+
+	RemoveNodesLargerThanK(listToRemoveK, 3);
 
 	LinkedList listHasCycle;
 	InitEmptyList(listHasCycle);

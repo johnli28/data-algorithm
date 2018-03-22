@@ -22,6 +22,7 @@ std::string str = "abc";
 
 // Note: C++ style of two dimension array
 // vector of vector
+// push back a vector as a new row
 
 typedef vector<vector<int>> TwoDimTable;
 

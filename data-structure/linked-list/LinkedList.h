@@ -29,6 +29,8 @@ void RevertList(LinkedList& head);
 ListNode* ConcatTwoLists(LinkedList& l1, LinkedList& l2);
 
 void RemoveNodesWithK(LinkedList & head, int k);
+void RemoveNodesLargerThanK(LinkedList & head, int k);
+
 ListNode* RemoveDuplicatedNodes(LinkedList & head);
 
 bool HasCycle(LinkedList head);
