@@ -4,6 +4,7 @@
 #include "Fibonacci.h"
 #include "MinSizeSubarraySum.h"
 #include "ReverseArray.h"
+#include "HasDuplicateNumber.h"
 
 void main()
 {
@@ -23,4 +24,14 @@ void main()
 	int minSizeSubarrarySum = MinSizeSubarraySum(a, sizeof(a) / sizeof(int), 169);
 
 	ReverseArray(a, sizeof(a) / sizeof(int));
+
+	int dn;
+	int aDN[10] = {0, 1, 2, 2, 4, 3, 3, 6, 7, 10};
+
+	bool hasDN = HasDuplicateNumber(nullptr, 10, dn);
+	hasDN = HasDuplicateNumber(aDN, -2, dn);
+	hasDN = HasDuplicateNumber(aDN, sizeof(aDN) / sizeof(int), dn);
+
+	int a1toN[5] = { 1, 2, 3, 5, 5};
+	hasDN = HasDuplicateNumber1toN(a1toN, sizeof(a1toN) / sizeof(int), dn);
 }
