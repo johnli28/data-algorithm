@@ -15,10 +15,12 @@ using namespace std;
 
 int lcsDP(char* lStr, int lLen, char* rStr, int rLen, string & lcsStr)
 {
+	// Note: vector of vector as DP table
 	vector<vector<int>> table;
 
 	int lcsLen = 0;
 
+	// two tiers of for loop
 	for (int i = 0; i <= lLen; i++)
 	{
 		table.push_back(vector<int>(rLen + 1));

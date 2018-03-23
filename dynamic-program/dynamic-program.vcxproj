@@ -113,6 +113,7 @@
     <ClInclude Include="Fibonacci.h" />
     <ClInclude Include="LongestCommonSubsequence.h" />
     <ClInclude Include="LongestIncreaseSubsequence.h" />
+    <ClInclude Include="MatrixMinSum.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
