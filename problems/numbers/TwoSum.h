@@ -66,8 +66,11 @@ vector<int> TwoSumDivisibleByK(int* arr, int length, int k)
 			retVec.push_back(hashTable[toFind]);
 			return retVec;
 		}
-
-		hashTable[remain] = arr[i];
+		else
+		{
+			hashTable[remain] = arr[i];
+		}
+		
 	}
 
 	return retVec;
