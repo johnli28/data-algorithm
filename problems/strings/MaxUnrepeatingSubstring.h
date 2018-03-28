@@ -11,7 +11,7 @@ int	 GetLengthOfLongestUnrepeatSubstring(const string& str)
 
 	int ret = 0;
 
-	// Note: use const_iterator to iterate const string
+	// Note: use start and end as a slide window
 	while (start < str.size() && end < str.size())
 	{
 		if (window.find(str[end]) == window.end())
