@@ -112,11 +112,13 @@
   <ItemGroup>
     <ClInclude Include="Fibonacci.h" />
     <ClInclude Include="HasDuplicateNumber.h" />
+    <ClInclude Include="MaxSubarraySumEqualK.h" />
     <ClInclude Include="MinSizeSubarraySum.h" />
     <ClInclude Include="NumberOfWaysToStep.h" />
     <ClInclude Include="palindrome.h" />
     <ClInclude Include="ReverseArray.h" />
     <ClInclude Include="TwoSum.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

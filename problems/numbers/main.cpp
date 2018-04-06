@@ -5,6 +5,7 @@
 #include "MinSizeSubarraySum.h"
 #include "ReverseArray.h"
 #include "HasDuplicateNumber.h"
+#include "MaxSubarraySumEqualK.h"
 
 void main()
 {
@@ -34,4 +35,8 @@ void main()
 
 	int a1toN[5] = { 1, 2, 3, 5, 5};
 	hasDN = HasDuplicateNumber1toN(a1toN, sizeof(a1toN) / sizeof(int), dn);
+
+	int arrMS[] = { 1, -1, 10, 5, 2, 7, 1, 2, -2, 9 };
+
+	int maxSubarraySum = MaxSubarraySumEqualK(arrMS, sizeof(arrMS) / sizeof(arrMS[0]), 15);
 }
