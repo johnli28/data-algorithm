@@ -4,16 +4,14 @@
 
 using namespace std;
 
-struct BinaryTreeNode
+struct BTNode
 {
 	int data;
-	BinaryTreeNode* left;
-	BinaryTreeNode* right;
+	BTNode* left;
+	BTNode* right;
 };
 
-
-
-typedef BinaryTreeNode* BinaryTree;
+typedef BTNode* BinaryTree;
 
 void DeserializeInorder(const string& inStr, int& pos, BinaryTree & outTree);
 void Deserialize(const string& inStr, BinaryTree & outTree);

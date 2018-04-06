@@ -45,7 +45,7 @@ void DeserializeInorder(const string& inStr, int& pos, BinaryTree & outTree)
 		{
 			int value = std::stoi(dataStr);
 
-			outTree = new BinaryTreeNode;
+			outTree = new BTNode;
 			outTree->data = value;
 			outTree->left = nullptr;
 			outTree->right = nullptr;
