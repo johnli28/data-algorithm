@@ -6,6 +6,7 @@
 #include "ReverseArray.h"
 #include "HasDuplicateNumber.h"
 #include "MaxSubarraySumEqualK.h"
+#include "IntegerToWords.h"
 
 void main()
 {
@@ -39,4 +40,7 @@ void main()
 	int arrMS[] = { 1, -1, 10, 5, 2, 7, 1, 2, -2, 9 };
 
 	int maxSubarraySum = MaxSubarraySumEqualK(arrMS, sizeof(arrMS) / sizeof(arrMS[0]), 15);
+
+
+	string words = IntegerToWords(1234567);
 }

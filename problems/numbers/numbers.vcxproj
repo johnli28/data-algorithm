@@ -112,6 +112,7 @@
   <ItemGroup>
     <ClInclude Include="Fibonacci.h" />
     <ClInclude Include="HasDuplicateNumber.h" />
+    <ClInclude Include="IntegerToWords.h" />
     <ClInclude Include="MaxSubarraySumEqualK.h" />
     <ClInclude Include="MinSizeSubarraySum.h" />
     <ClInclude Include="NumberOfWaysToStep.h" />
