@@ -352,3 +352,57 @@ bool HasCycle(LinkedList head)
 
 
 }
+
+LinkedList MergeTwoLists(LinkedList A, LinkedList B)
+{
+	if (A == nullptr)
+	{
+		return B;
+	}
+	else if (B == nullptr)
+	{
+		return A;
+	}
+
+	ListNode* result = nullptr;
+
+	if (A->data >= B->data)
+	{
+		result = B;
+		result->next = MergeTwoLists(A, B->next);
+	}
+	else
+	{
+		result = A;
+		result->next = MergeTwoLists(A->next, B);
+	}
+
+	return result;
+}
+
+// Divide and conquer
+LinkedList MergeKLists(vector<LinkedList> & listVec)
+{
+	int totalCount = listVec.size();
+
+	// Note: two while loop pass, external condition is list count more than 1
+	while (totalCount > 1)
+	{
+		int begin = 0;
+		int end = totalCount - 1;
+
+		// Merge each of two together
+		while (begin < end)
+		{
+			listVec[begin] = MergeTwoLists(listVec[begin], listVec[end]);
+			begin++;
+			end--;
+		}
+
+		totalCount = end + 1;
+	}
+
+	return listVec[0];
+
+	
+}

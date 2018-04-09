@@ -2,6 +2,8 @@
 
 //Note: Use C to implement linked list and some usual functions
 
+#include <vector>
+
 using namespace std;
 
 struct ListNode
@@ -34,3 +36,5 @@ void RemoveNodesLargerThanK(LinkedList & head, int k);
 ListNode* RemoveDuplicatedNodes(LinkedList & head);
 
 bool HasCycle(LinkedList head);
+
+LinkedList MergeKLists(vector<LinkedList> & lists);
