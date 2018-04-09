@@ -4,6 +4,9 @@
 
 #include <memory>
 #include <queue>
+#include <stack>
+#include <queue>
+#include <iostream>
 
 using namespace std;
 
@@ -60,10 +63,9 @@ bool IsSymm(BSTNode* node)
 		return true;
 	}
 
-	// Note: A node queue for iterate all tree nodes
+	// Note: Init a queue for iterate all tree nodes and push root's left and right
 	queue<BSTNode*> nq;
 
-	// Note: push left and right
 	nq.push(node->left);
 	nq.push(node->right);
 
@@ -94,7 +96,7 @@ bool IsSymm(BSTNode* node)
 			return false;
 		}
 
-		// Note: push the following 
+		// Note: push subsequent children 
 		nq.push(l->left);
 		nq.push(r->right);
 		nq.push(l->right);
@@ -104,3 +106,144 @@ bool IsSymm(BSTNode* node)
 
 	return true;
 }
+
+// Note: Two In & Out parameters: diff and key
+void ClosestValueInBSTHelper(BSTNode* tree, double d, int& diff, int& diffKey)
+{
+	if (tree == nullptr)
+	{
+		return;
+	}
+
+	// Note: if data equals with d, return
+	if (tree->data == d)
+	{
+		diff = 0;
+		diffKey = tree->data;
+		return;
+	}
+
+	// Note: calculate latest diff
+	if (diff > abs(tree->data - d))
+	{
+		diff = abs(tree->data - d);
+		diffKey = tree->data;
+	}
+
+	// Note: recursive go to left or right child
+	if (d < tree->data)
+	{
+		ClosestValueInBSTHelper(tree->left, d, diff, diffKey);
+	}
+	else
+	{
+		ClosestValueInBSTHelper(tree->right, d, diff, diffKey);
+	}
+
+}
+
+int ClosestValueInBST(BSTNode* tree, double d)
+{
+	
+	int minDiff = INT_MAX;
+	int minDiffKey;
+
+	ClosestValueInBSTHelper(tree, d, minDiff, minDiffKey);
+
+	return minDiffKey;
+}
+
+
+// Note: define a helper function and pass both tree node and value
+int SumLeafNumbersHelper(BSTNode* tree, int val)
+{
+	if (tree == nullptr)
+	{
+		return 0;
+	}
+
+	// Note: calculate current representing value
+	int myNumber = val * 10 + tree->data;
+
+	// Note: If it is a leaf, return value, otherwise return recursive left + right
+	if (tree->left == nullptr && tree->right == nullptr)
+	{	
+		return myNumber;
+	}
+	else
+	{
+		return SumLeafNumbersHelper(tree->left, myNumber) + SumLeafNumbersHelper(tree->right, myNumber);
+	}
+	
+}
+
+int SumLeafNumbers(BSTNode* tree)
+{
+	int val = 0;
+	return SumLeafNumbersHelper(tree, val);
+}
+
+
+void LevelOrderTraverse(BSTNode* tree)
+{
+	if (tree == nullptr)
+	{
+		return;
+	}
+
+	// Note: Init a queue and push root in
+	queue<BSTNode*> nq;
+	nq.push(tree);
+
+	// Note: while queue is not empty, access data, then push left and right
+	while (!nq.empty())
+	{
+		BSTNode* l = nq.front();
+		nq.pop();
+		std::cout << l->data << std::endl;
+
+		if (l->left != nullptr)
+		{
+			nq.push(l->left);
+		}
+		
+		if (l->right != nullptr)
+		{
+			nq.push(l->right);
+		}
+	}
+}
+
+void InOrderTraverse(BSTNode* tree)
+{
+	if (tree == nullptr)
+	{
+		return;
+	}
+
+	stack<BSTNode*> ns;
+	BSTNode* cur = tree;
+
+	while (cur != nullptr)
+	{
+		ns.push(cur);
+		cur = cur->left;
+	}
+
+	while (!ns.empty())
+	{
+		BSTNode* t = ns.top();
+		ns.pop();
+
+	std:cout << t->data << std::endl;
+
+		BSTNode* r = t->right;
+
+		while (r != nullptr)
+		{
+			ns.push(r);
+			r = r->left;
+		}
+	}
+}
+

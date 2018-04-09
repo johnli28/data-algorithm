@@ -11,4 +11,8 @@ void main()
 	bool isBSTRet = IsBST(bst1);
 
 	bool isSymmRet = IsSymm(bst1);
+
+	InOrderTraverse(bst1);
+
+	getchar();
 }
