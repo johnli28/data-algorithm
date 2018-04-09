@@ -15,7 +15,7 @@ using namespace std;
 
 int lcsDP(char* lStr, int lLen, char* rStr, int rLen, string & lcsStr)
 {
-	// Note: vector of vector as DP table
+	// Note: 2D array as DP table
 	vector<vector<int>> table;
 
 	int lcsLen = 0;

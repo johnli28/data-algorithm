@@ -17,6 +17,7 @@ vector<int> LongestIncreaseSubsequence(int* arr, int length)
 
 		for (int j = 0; j < i; j++)
 		{
+			// Note: if element[j] < element[i], dp[i] is the largest of dp[j] + 1
 			if (arr[j] < arr[i])
 			{
 				dpTable[i] = max(dpTable[j] + 1, dpTable[i]);
