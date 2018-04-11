@@ -111,6 +111,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="KthUnrepeatingChar.h" />
+    <ClInclude Include="LongestPalindromeSubstring.h" />
     <ClInclude Include="MaxRepeatingChar.h" />
     <ClInclude Include="MaxUnrepeatingSubstring.h" />
     <ClInclude Include="ReverseString.h" />
