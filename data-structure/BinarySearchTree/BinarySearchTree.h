@@ -21,7 +21,7 @@ typedef struct BSTNode
 
 } BSTNode;
 
-// Note: Pass two limits min and max
+// Note: Recursive util function with two limits min and max passing in
 bool IsBSTHelper(BSTNode* node, int min, int max)
 {
 	// Note: Empty tree is BST
@@ -107,7 +107,7 @@ bool IsSymm(BSTNode* node)
 	return true;
 }
 
-// Note: Two In & Out parameters: diff and key
+// Note: recursive util function with two In & Out parameters: diff and diffKey
 void ClosestValueInBSTHelper(BSTNode* tree, double d, int& diff, int& diffKey)
 {
 	if (tree == nullptr)
