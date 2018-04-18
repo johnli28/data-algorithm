@@ -12,7 +12,9 @@ void main()
 
 	bool isSymmRet = IsSymm(bst1);
 
-	InOrderTraverse(bst1);
+	//InOrderTraverse(bst1);
+
+	PreOrderTraverse(bst1);
 
 	getchar();
 }
