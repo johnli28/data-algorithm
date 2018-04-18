@@ -403,6 +403,58 @@ LinkedList MergeKLists(vector<LinkedList> & listVec)
 	}
 
 	return listVec[0];
+}
 
-	
+LinkedList addTwoLists(LinkedList l1, LinkedList l2)
+{
+	ListNode* left = l1;
+	ListNode* right = l2;
+
+	int carry = 0;
+	int sum = 0;
+
+	while (left != nullptr || right != nullptr)
+	{
+		int lVal = 0; int rVal = 0;
+		if (left != nullptr)
+		{
+			lVal = left->data;
+		}
+		if (right != nullptr)
+		{
+			rVal = right->data;
+		}
+
+		sum = lVal + rVal + carry;
+
+		if (sum > 9)
+		{
+			carry = 1;
+			sum = sum % 10;
+		}
+		else
+		{
+			carry = 0;
+		}
+
+		std::cout << sum << " ";
+
+		if (left != nullptr)
+		{
+			left = left->next;
+		}
+		
+		if (right != nullptr)
+		{
+			right = right->next;
+		}
+		
+	}
+
+	if (carry == 1)
+	{
+		std::cout << 1 << " " << std::endl;
+	}
+
+	return nullptr;
 }

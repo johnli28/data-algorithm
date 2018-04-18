@@ -113,9 +113,29 @@ void TestLinkedList()
 
 }
 
+void TestAddTwoLists()
+{
+	LinkedList l1;
+	InitEmptyList(l1);
+
+	Append(l1, 6);
+	Append(l1, 5);
+
+	LinkedList l2;
+	InitEmptyList(l2);
+
+	Append(l2, 7);
+	Append(l2, 4);
+	Append(l2, 9);
+
+	addTwoLists(l1, l2);
+}
+
 int main()
 {
 	TestLinkedList();
+
+	TestAddTwoLists();
 
 	getchar();
 

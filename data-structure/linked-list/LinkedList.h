@@ -38,3 +38,5 @@ ListNode* RemoveDuplicatedNodes(LinkedList & head);
 bool HasCycle(LinkedList head);
 
 LinkedList MergeKLists(vector<LinkedList> & lists);
+
+LinkedList addTwoLists(LinkedList l1, LinkedList l2);
