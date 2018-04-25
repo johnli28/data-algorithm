@@ -407,54 +407,75 @@ LinkedList MergeKLists(vector<LinkedList> & listVec)
 
 LinkedList addTwoLists(LinkedList l1, LinkedList l2)
 {
-	ListNode* left = l1;
-	ListNode* right = l2;
-
+	// Note: init result and carry 
+	LinkedList result = nullptr;
+	LinkedList last = nullptr;
 	int carry = 0;
-	int sum = 0;
 
-	while (left != nullptr || right != nullptr)
+	// Note: while condition, either linkedlist is not empty
+	while (l1 != nullptr || l2 != nullptr)
 	{
-		int lVal = 0; int rVal = 0;
-		if (left != nullptr)
+		int val = 0, val2 = 0;
+
+		if (l1 != nullptr)
 		{
-			lVal = left->data;
-		}
-		if (right != nullptr)
-		{
-			rVal = right->data;
+			val = l1->data;
 		}
 
-		sum = lVal + rVal + carry;
+		if (l2 != nullptr)
+		{
+			val2 = l2->data;
+		}
+
+		// Note: if val > 9, mode and carry = 1, otherwise carry = 0;
+		int sum = val + val2 + carry;
 
 		if (sum > 9)
 		{
-			carry = 1;
 			sum = sum % 10;
+			carry = 1;
 		}
 		else
 		{
 			carry = 0;
 		}
 
-		std::cout << sum << " ";
+		ListNode* newNode = new ListNode();
+		newNode->data = sum;
+		newNode->next = nullptr;
 
-		if (left != nullptr)
+		// Append to the end
+		if (result == nullptr)
 		{
-			left = left->next;
+			result = newNode;
+			last = result;
 		}
-		
-		if (right != nullptr)
+		else
 		{
-			right = right->next;
+			last->next = newNode;
+			last = last->next;
 		}
-		
+
+		// Fault: check null firstly
+		if (l1 != nullptr)
+		{
+			l1 = l1->next;
+		}
+
+		if (l2 != nullptr)
+		{
+			l2 = l2->next;
+		}
+
 	}
 
 	if (carry == 1)
 	{
-		std::cout << 1 << " " << std::endl;
+		ListNode* newNode = new ListNode();
+		newNode->data = 1;
+		newNode->next = nullptr;
+		last->next = newNode;
 	}
 
-	return nullptr;
+	return result;
 }
